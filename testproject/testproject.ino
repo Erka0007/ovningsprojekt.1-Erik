@@ -79,11 +79,11 @@ float getTemp() {
 }
 
 /*
-* This function takes a string and draws it to an oled display. It also takes a color value and displays on of there different string dependig of which value is recived.
-* The function 
+* This function takes a string and draws it to an oled display. It also takes a color value and displays on of three different string dependig of which value is recived.
+* The function also displays a clock icon and a tempature icon.
 *Parameters: - text: String to write to display
 *Parameters: - temp: String to write to display, showing the tempature¨
-*Parameters: -color: an int, which is then converted to a text corissponing to the color the int represents, which is then shown on the display
+*Parameters: -color: an int, which is then converted to a text corresponding to the color the int represents, which is then shown on the display
 *Returns: void
 */
 void oledWrite(String text, String temp, int color) {
@@ -112,7 +112,7 @@ void oledWrite(String text, String temp, int color) {
     u8g.drawLine(7, 48, 9, 48);
     u8g.drawLine(7, 54, 9, 54);
     
-    //The code below dispalys which color is chosen
+    //The code below displays which color is chosen
     u8g.drawStr(18, 37, "Color:");
     if (color == 255){
     u8g.drawStr(65, 37, "Blue");
@@ -128,7 +128,7 @@ void oledWrite(String text, String temp, int color) {
 }
 
 /*
-* takes a temprature value and maps it to corresppnding degree on a servo
+* takes a temprature value and maps it to a corresponding degree on a servo
 *Parameters: - value: temprature
 *Returns: void
 */
@@ -138,9 +138,9 @@ void servoWrite(float value) {
 
 /*
 * takes a temprature value and a color value. The function maps the temprature value and changes the color of a ring light accordingly. 
-* The color value changes which two colors the ringlight moves betweens when the tempatrue changes.
+* The color value changes which two colors the ringlight moves betweens when the temprature changes.
 *Parameters: - temp: temprature
-*Parameters: -color: an constat color value that decides the last value in RGB
+*Parameters: -color: an int that decides the last value in RGB
 *Returns: void
 */
 
@@ -153,7 +153,7 @@ for(int i = 0; i < 24; i++){
 }
 
 /*
-* Reads the value of a potentiometer and returns of of theree different color values accordingly
+* Reads the value of a potentiometer and returns one of three different color values accordingly
 *Parameters: void
 *Returns: either 0, 255 or 155 as an int
 */
